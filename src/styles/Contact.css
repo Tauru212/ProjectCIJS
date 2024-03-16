@@ -1,0 +1,83 @@
+.form{
+    margin-top: 5rem;
+}
+form{
+    border: 2px solid var(--clr-rose);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin: 0 auto;
+}
+label{
+  font-weight: 500;
+}
+label,input{
+    width: 100%;
+    outline: transparent;
+    height: 2.5rem;
+    background-color: #e5e5e5;
+}
+textarea{
+  width: 100%;
+  background-color: #e5e5e5;
+  outline: transparent;
+}
+input,textarea{
+  border: 1px solid rgb(113, 113, 113);
+  border-radius: 5px;
+  padding: 1rem;
+}
+#submit{
+  background-color: var(--clr-rose);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+}
+/* xs */
+@media (min-width: 475px){
+    .container{
+        max-width: 475px;
+    }
+  }
+  
+  /* sm */
+  @media (min-width: 640px){
+    .container{
+        max-width: 640px;
+    }
+  }
+  
+  /* md */
+  @media (min-width: 768px){
+    .container{
+        max-width: 768px;
+    }
+    .form{
+      margin-top: 9rem;
+    }
+    form{
+      width: 70%;
+    }
+    
+  }
+  
+  /* lg */
+  @media (min-width: 1024px){
+    .container{
+        max-width: 1024px;
+    }
+  }
+  
+  /* xl */
+  @media (min-width: 1280px){
+    .container{
+        max-width: 1280px;
+    }
+  }
+  
+  /* 2xl */
+  /* @media (min-width: 1536px){
+    .container{
+        max-width: 1536px;
+    }
+  } */

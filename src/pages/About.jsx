@@ -1,0 +1,20 @@
+import React from 'react'
+import '../styles/About.css'
+
+import shop1 from '../images/shop1.jpg'
+import shop2 from '../images/shop2.jpg'
+import shop3 from '../images/shop3.jpg'
+
+const About = () => {
+  return (
+    <div className='about'>
+      <p>
+      Chào mừng đến với N5 Coffee - Nơi cà phê hội tụ sự hoàn hảo! Tại N5 Coffee, chúng tôi đam mê tạo ra tách cà phê hoàn hảo. Chúng tôi tin rằng mọi người yêu thích cà phê đều xứng đáng có được trải nghiệm cà phê đặc biệt và đó chính xác là những gì chúng tôi cung cấp. Bước vào thiên đường cà phê ấm cúng của chúng tôi và bắt đầu cuộc hành trình với những hương vị phong phú, warm ambiance, và dịch vụ thân thiện. Nghệ thuật cà phê Chúng tôi rất coi trọng cà phê của mình. Các nhân viên pha chế lành nghề của chúng tôi đều là những nghệ sĩ, họ pha chế từng tách cà phê một cách chuyên nghiệp đến mức hoàn hảo. Cho dù bạn thích vị đậm đà của cà phê espresso hay cảm giác êm dịu dễ chịu của cà phê latte, chúng tôi đều đáp ứng được nhu cầu của bạn. Thực đơn cà phê của chúng tôi là một bản giao hưởng của nhiều hương vị, bao gồm các loại đậu có nguồn gốc duy nhất có nguồn gốc từ khắp nơi trên thế giới và được rang tại nhà một cách hoàn hảo. </p><br /><img src={shop1} alt="" /> <br /><br /> <p>Một thế giới đa dạng Tại N5 Coffee, chúng tôi tôn vinh sự đa dạng. Thực đơn của chúng tôi cung cấp nhiều phong cách cà phê khác nhau, từ Americanos cổ điển đến các loại cà phê pha lạnh sáng tạo. Chúng tôi không dừng lại ở cà phê; chúng tôi cũng cung cấp tuyển chọn các loại trà, sôcôla nóng và đồ uống giải khát tinh tế cho những ai đang tìm kiếm thứ gì đó khác biệt. Không gian ấm cúng Quán cà phê của chúng tôi không chỉ là nơi để thưởng thức một tách cà phê; đó là thiên đường nơi bạn có thể thư giãn, làm việc hoặc gặp gỡ bạn bè. Bầu không khí chào đón của chúng tôi được thiết kế để giúp bạn cảm thấy như đang ở nhà. Thưởng thức hương thơm của đậu mới rang, nhạc jazz nhẹ nhàng trong nền và chỗ ngồi thoải mái mời gọi bạn ở lại lâu hơn một chút. </p><br /><img src={shop2} alt="" /><br /><br /><p>
+      Địa phương và bền vững Chúng tôi tự hào về cam kết của mình đối với môi trường và cộng đồng. Chúng tôi cung cấp hạt cà phê của mình một cách có đạo đức và hỗ trợ nông dân địa phương bất cứ khi nào có thể. Cam kết của chúng tôi về tính bền vững còn mở rộng sang các loại cốc và đồ dùng thân thiện với môi trường, giảm lượng khí thải carbon mỗi lần nhấp một ngụm. Món ăn tự làm Kết hợp cà phê của bạn với bánh ngọt và đồ ăn nhẹ tự làm ngon lành của chúng tôi. Từ bánh sừng bò xốp cho đến những chiếc bánh thơm ngon, lựa chọn tiệm bánh của chúng tôi là sự bổ sung hoàn hảo cho trải nghiệm cà phê của bạn. Đặt hàng dễ dàng Chúng tôi coi trọng thời gian của bạn, đó là lý do tại sao chúng tôi cung cấp các tùy chọn đặt hàng thuận tiện.</p><br /><img src={shop3} alt="" /> <br /><br /> Bạn có thể đặt hàng đặt hàng trước thông qua ứng dụng di động của chúng tôi để nhận hàng nhanh chóng hoặc đặt hàng từ đội ngũ nhân viên thân thiện của chúng tôi tại quầy. Cà phê của bạn được chuẩn bị cẩn thận và sẵn sàng khi bạn cần. Trung tâm cộng đồng N5 Coffee không chỉ là nơi để thưởng thức đồ uống; đó là một trung tâm cộng đồng. Chúng tôi tổ chức các sự kiện, đêm nhạc mở và triển lãm nghệ thuật, gắn kết mọi người lại với nhau để chia sẻ niềm đam mê và sự sáng tạo của họ. Ghé thăm chúng tôi ngay hôm nay Trải nghiệm cà phê ngon nhất thành phố tại N5 Coffee. Cho dù bạn là người sành cà phê hay chỉ đơn giản là đang tìm kiếm một địa điểm thân thiện để thưởng thức một tách cà phê, chúng tôi mời bạn tham gia cùng chúng tôi. Sứ mệnh của chúng tôi là mang lại niềm vui từ cà phê đặc biệt cho mỗi ngày của bạn, từng ngụm một.
+      Hãy ghé qua N5 Coffee và khám phá lý do tại sao chúng tôi lại là chủ đề bàn tán của thị trấn. Khoảnh khắc cà phê hoàn hảo của bạn đang chờ đợi!
+      
+    </div>
+  )
+}
+
+export default About
