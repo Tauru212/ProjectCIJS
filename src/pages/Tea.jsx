@@ -1,65 +1,60 @@
 import React from 'react'
 import '../styles/TopRated.css'
+import { Link, useNavigate } from 'react-router-dom';
+import data2 from '../../data2.json';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react'; 
+import ProductDetail from '../component/ProfuctDetail';
+import {Route, Routes} from 'react-router-dom';
 
+const Loading = styled.div`
+    font-size: 20px;
+    color: #333;
+`;
 
 const Tea = () => {
-    const items = [
-        {
-            id : 1,
-            img : "https://akm-img-a-in.tosshub.com/sites/visualstory/stories/2023_08/story_55314/assets/2.jpeg?time=1691768874&size=*:900",
-            price:'$30',
-            title : 'Green Tea'
-        },
-        {
-            id : 2,
-            img : "https://brodandtaylor.com/cdn/shop/articles/dehydrated-tea-thumb_1024x.jpg?v=1639765759",
-            title : 'Herbal Tea',
-            price:'$30',
-        },
-        {
-            id : 3,
-            img : "https://images.unsplash.com/photo-1610137312679-8de3a836b455?ixid=M3wxMzcxOTN8MHwxfHNlYXJjaHw2fHxibGFjayUyMHRlYXxlbnwwfHx8fDE2OTcwMDIyNzl8MA&ixlib=rb-4.0.3&fm=jpg&w=5836&h=3629&fit=max",
-            title : 'Black Tea',
-            price:'$30',
-        },
-        {
-            id : 4,
-            img : "https://www.organicfacts.net/wp-content/uploads/milktea1.jpg",
-            price:'$30',
-            title : 'White Tea'
-        },
-        {
-            id : 5,
-            img : "https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN538-Oolong-Tea-732x549-thumb.jpg",
-            price:'$30',
-            title : 'Oolong Tea'
-        },
-        {
-            id : 6,
-            img : "https://www.naturalnews.com/wp-content/uploads/sites/91/2019/04/Rooibos-Tea-Healthy-Background-Plant-Roibos-Africa.jpg",
-            price:'$30',
-            title : 'Rooibos Tea'
-        },
-    ]
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [filterProduct, setFilterProduct]=useState([])
+    const [openDetail, setOpenDetail]=useState(false)
+    const navigate = useNavigate(); 
+    useEffect(() => {
+        // Gán dữ liệu từ data.json vào state
+        setItems(data2.data);
+        setLoading(false);
+    }, []);
+
+    if (loading) {
+        return <Loading>Loading...</Loading>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+    const handleClick=(item)=>{
+    setFilterProduct(item)
+    setOpenDetail(true)
+    }
   return (
     <>
-        <div>
+        {openDetail===true?(<ProductDetail filterProduct={filterProduct}/>):<div>
         <h2 className='top-h2'>Tea</h2>
             <div className="lists">
                 {
                     items.map((item) => (
-                            <div className="list">
+                        <Link onClick={()=>handleClick(item)} className="list" >
                                 <img src={item.img} alt="" />
                                 <div className="list-dis">
                                 <p>{item.title}</p>
                                 <p>{item.price}</p>
-                                <button>Mua Ngay</button>
+                                <button>Xem Thêm</button>
                                 </div>
-                            </div>
+                            </Link>
                     ))
                 }
             </div>
-        </div>
+        </div>}
     </>
   )
 }

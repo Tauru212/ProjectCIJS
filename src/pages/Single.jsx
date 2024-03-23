@@ -30,6 +30,7 @@ const Single = () => {
     fetchApi()
 
   },[])
+  console.log(111111)
   return (
     <>
          <div className="single__menu">

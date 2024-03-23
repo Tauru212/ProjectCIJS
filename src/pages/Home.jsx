@@ -3,6 +3,7 @@ import '../styles/Home.css'
 import TopRated from './TopRated';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { useNavigate } from 'react-router-dom';
 
 import img1 from '../images/1.webp'
 import img2 from '../images/2.webp'
@@ -19,6 +20,14 @@ import Cake from './Cake';
 
 
 const Home = () => {
+    const sections = {
+        coffee: 'TopRate', // Replace with actual ID of your Coffee section
+        tea: 'Tea',      // Replace with actual ID of your Tea section
+        cookie: 'Cookie', // Replace with actual ID of your Cookie section
+        cake: 'Cake',     // Replace with actual ID of your Cake section
+    };
+
+
     const menu = [
         {
             id : 1,
@@ -61,6 +70,16 @@ const Home = () => {
             title : 'Cold Brew',
         },
     ]
+
+    const handleButtonClick = (section) => {
+        const element = document.querySelector(sections[section]);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+    
+
   return (
     <>
       <div className='home'>
@@ -87,10 +106,10 @@ const Home = () => {
           </Carousel>
 
           <div className="items">
-              <button className='btn'>Coffee</button>
-              <button className='btn'>Tea</button>
-              <button className='btn'>Cookie</button>
-              <button className='btn'>Cake</button>
+            <button className='btn' onClick={() => handleButtonClick('TopRated')}>Coffee</button>
+            <button className='btn' onClick={() => handleButtonClick('Tea')}>Tea</button>
+            <button className='btn' onClick={() => handleButtonClick('Cookie')}>Cookie</button>
+            <button className='btn' onClick={() => handleButtonClick('Cake')}>Cake</button>
           </div>
           <div className="section">
             <TopRated />

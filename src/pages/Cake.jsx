@@ -1,65 +1,62 @@
 import React from 'react'
 import '../styles/TopRated.css'
+import { Link, useNavigate } from 'react-router-dom';
+import data from '../../data.json';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import ProductDetail from '../component/ProfuctDetail';
+import {Route, Routes} from 'react-router-dom';
+
+const Loading = styled.div`
+    font-size: 20px;
+    color: #333;
+`;
 
 
 const Cake = () => {
-    const items = [
-        {
-            id : 1,
-            img : "https://thepastryjournal.com/wp-content/uploads/2022/10/72525049-F792-46ED-9038-D24507249644.png",
-            price:'$30',
-            title : 'Chocolate Cake'
-        },
-        {
-            id : 2,
-            img : "https://i.ytimg.com/vi/dH6HDolxCxE/maxresdefault.jpg",
-            title : 'vanilla cake',
-            price:'$30',
-        },
-        {
-            id : 3,
-            img : "https://thescranline.com/wp-content/uploads/2023/06/RED-VELVET-CAKE-23-S-01.jpg",
-            title : 'Red Velvet Cake',
-            price:'$30',
-        },
-        {
-            id : 4,
-            img : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2007/2/16/0/ry0401_carrotcake.jpg.rend.hgtvcom.1280.1280.suffix/1552488933139.jpeg",
-            price:'$30',
-            title : 'Carrot Cake'
-        },
-        {
-            id : 5,
-            img : "https://img.delicious.com.au/ZLE2ZHYD/del/2023/02/p109-strawberry-yoghurt-cheesecake-with-double-crumb-183879-2.png",
-            price:'$30',
-            title : 'Cheesecake'
-        },
-        {
-            id : 6,
-            img : "https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg",
-            price:'$30',
-            title : 'Tiramisu'
-        },
-    ]
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [filterProduct, setFilterProduct]=useState([])
+    const [openDetail, setOpenDetail]=useState(false)
+    const navigate = useNavigate(); 
+    useEffect(() => {
+        // Gán dữ liệu từ data.json vào state
+        setItems(data.data);
+        setLoading(false);
+    }, []);
+
+    if (loading) {
+        return <Loading>Loading...</Loading>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+    const handleClick=(item)=>{
+    setFilterProduct(item)
+    setOpenDetail(true)
+    }
+    
   return (
     <>
-        <div>
-        <h2 className='top-h2'>Cakes</h2>
+        {openDetail===true?(<ProductDetail filterProduct={filterProduct}/>):<div>
+        <h2 className='top-h2'>Cake</h2>
             <div className="lists">
                 {
                     items.map((item) => (
-                            <div className="list">
+                        <Link onClick={()=>handleClick(item)} className="list" >
                                 <img src={item.img} alt="" />
                                 <div className="list-dis">
                                 <p>{item.title}</p>
                                 <p>{item.price}</p>
-                                <button>Mua Ngay</button>
+                                <button>Xem Thêm</button>
                                 </div>
-                            </div>
+                            </Link>
                     ))
                 }
             </div>
-        </div>
+        </div>}
     </>
   )
 }
